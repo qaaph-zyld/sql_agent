@@ -1,0 +1,151 @@
+# SQL_agent Workspace Structure
+
+## Root Directory
+- `DATA_QUALITY_README.md` - Documentation for data quality checking features and processes
+- `Database_tables/` - Directory containing database table definitions and analysis
+- `Inventory_daily_report.py` - Script for generating daily inventory reports
+- `POWER_BI_INTEGRATION.md` - Documentation for Power BI integration features
+- `README.md` - Main project documentation with overview of components and usage
+- `__pycache__/` - Python cache directory
+- `config.ini` - Configuration file for database connections
+- `custom_query_analysis.log` - Log file for custom query analyzer
+- `custom_query_analyzer.py` - Script for analyzing custom SQL queries and their relationships
+- `dashboard_generator.log` - Log file for dashboard generation
+- `data_lineage.log` - Log file for data lineage mapping
+- `data_lineage_mapper.py` - Script for mapping data lineage across database tables
+- `data_quality.log` - Log file for data quality checks
+- `data_quality_core.py` - Core functions for data quality checking
+- `data_quality_manager.py` - Script for managing data quality checks and reports
+- `enhanced_db_mapper.py` - Enhanced database mapping functionality
+- `extract_field_info.py` - Script for extracting field information from database
+- `extracted_field_definitions.json` - JSON file containing extracted field definitions
+- `extracted_field_descriptions_advanced.json` - JSON file containing advanced field descriptions
+- `generate_interactive_dashboard.py` - Script for generating interactive dashboards
+- `integrated-persona.md` - Documentation for integrated personas
+- `pdf_extraction.log` - Log file for PDF extraction
+- `pdf_field_extractor.py` - Script for extracting field information from PDF documents
+- `project_development_prompt.md` - Development prompts and guidelines
+- `prompt.md` - General prompt documentation
+- `qad_docs/` - Directory containing QAD documentation
+- `query_interface.log` - Log file for query interface
+- `query_parameter_interface.py` - Script for parameterized query interface
+- `relationship_mapper.py` - Script for mapping relationships between database tables
+- `reports/` - Directory containing report files and scripts
+- `requirements.txt` - List of Python dependencies
+- `schedule_reports.bat` - Batch file for scheduling report generation
+- `sql-agent/` - Directory containing SQL agent implementation
+- `sql-agent-implementation.md` - Documentation for SQL agent implementation
+- `sql-agent-initial-prompt.md` - Initial prompts for SQL agent
+- `sql-agent-roadmap.md` - Roadmap for SQL agent development
+
+## Database_tables Directory
+- `QADEE2798/` - Directory containing QADEE2798 database analysis
+
+### QADEE2798 Directory
+- `Column_prompts.md` - Documentation for column calculation rules and prompts
+- `custom_queries.md` - Documentation for custom queries
+- `custom_query_analysis.json` - JSON file with custom query analysis results
+- `custom_query_diagram.png` - Diagram showing custom query relationships
+- `custom_sql_queries/` - Directory containing custom SQL queries
+- `dashboard/` - Directory containing dashboard files
+- `data_dictionary.md` - Data dictionary for the database
+- `data_flow_inventory_management.png` - Diagram showing inventory management data flow
+- `data_flow_production_scheduling.png` - Diagram showing production scheduling data flow
+- `data_flow_purchase_order_processing.png` - Diagram showing purchase order processing data flow
+- `data_flow_sales_order_processing.png` - Diagram showing sales order processing data flow
+- `data_flow_serial_tracking.png` - Diagram showing serial tracking data flow
+- `data_flow_shipping_and_logistics.png` - Diagram showing shipping and logistics data flow
+- `data_lineage.md` - Documentation for data lineage
+- `database_mapping.sql` - SQL script for database mapping
+- `database_relationships_inferred.png` - Diagram showing inferred database relationships
+- `database_summary.md` - Summary of database structure and tables
+- `dbo.15/` - Directory for table dbo.15
+- `dbo.PreShipperShipper/` - Directory for table dbo.PreShipperShipper
+- `dbo.active_schd_det/` - Directory for table dbo.active_schd_det
+- `dbo.ad_mstr/` - Directory for table dbo.ad_mstr
+- `dbo.ld_det/` - Directory for table dbo.ld_det
+- `dbo.pckc_mstr/` - Directory for table dbo.pckc_mstr
+- `dbo.po_mstr/` - Directory for table dbo.po_mstr
+- `dbo.pod_det/` - Directory for table dbo.pod_det
+- `dbo.ps_mstr/` - Directory for table dbo.ps_mstr
+- `dbo.pt_mstr/` - Directory for table dbo.pt_mstr
+- `dbo.ro_det/` - Directory for table dbo.ro_det
+- `dbo.sch_mstr/` - Directory for table dbo.sch_mstr
+- `dbo.sct_det/` - Directory for table dbo.sct_det
+- `dbo.ser_active_picked/` - Directory for table dbo.ser_active_picked
+- `dbo.ser_item_detail/` - Directory for table dbo.ser_item_detail
+- `dbo.serh_hist/` - Directory for table dbo.serh_hist
+- `dbo.so_mstr/` - Directory for table dbo.so_mstr
+- `dbo.tr_hist/` - Directory for table dbo.tr_hist
+- `dbo.xxwezoned_det/` - Directory for table dbo.xxwezoned_det
+- `inferred_relationships.csv` - CSV file with inferred table relationships
+- `master_data_flow.png` - Master diagram showing all data flows
+- `performance_recommendations.md` - Recommendations for performance improvements
+- `project_conclusions.md` - Project conclusions and findings
+- `query_builder_templates.md` - Templates for building queries
+- `query_examples.md` - Example queries
+
+### Custom SQL Queries Directory
+- `Customer_Demand_per_BOM.sql` - SQL query for customer demand per BOM
+- `ISS-SO_RCT-PO_per_week_per_item.sql` - SQL query for issues and receipts per week per item
+- `Item_Master_all_no_xc_rc.sql` - SQL query for item master data
+- `MMV.sql` - SQL query for MMV (Material Master View)
+- `Receipts_per_week.sql` - SQL query for receipts per week
+- `Transaction_per_week_per_item.sql` - SQL query for transactions per week per item
+
+## QAD Docs Directory
+- `Customer Demand Management.docx` - Documentation for customer demand management
+- `Drop Shipment.docx` - Documentation for drop shipment process
+- `Goods Receipt.docx` - Documentation for goods receipt process
+- `Inventory Management Reports.docx` - Documentation for inventory management reports
+- `Inventory Transfer (nonAS).docx` - Documentation for inventory transfer process
+- `MRP.docx` - Documentation for MRP (Material Requirements Planning)
+- `Materials Management Tools.docx` - Documentation for materials management tools
+- `NEW RA process instruction.docx` - Documentation for RA process
+- `Nettable Inventory status change.docx` - Documentation for nettable inventory status change
+- `Schedule Analysis Tools.docx` - Documentation for schedule analysis tools
+- `Shipping.docx` - Documentation for shipping process
+- `Supplier Scheduling.docx` - Documentation for supplier scheduling
+
+## Reports Directory
+- `__pycache__/` - Python cache directory
+- Multiple report files organized by type:
+  - Cycle count reports (files with `cycle_count_due_` prefix)
+  - Data quality summary reports
+  - Epic status reports (files with `epic_status_` prefix)
+  - Group issues reports (files with `group_issues_` prefix)
+  - Inventory check reports (files with `inventory_check_` prefix)
+  - Item type error reports (files with `item_type_error_` prefix)
+  - Missing cost reports (files with `missing_cost_` prefix)
+  - Missing routing reports (files with `missing_routing_` prefix)
+  - New items reports (files with `new_items_` prefix)
+  - Operation check reports (files with `operation_check_` prefix)
+  - Production line issues reports (files with `prod_line_issues_` prefix)
+  - Slow moving inventory reports (files with `slow_moving_` prefix)
+  - WIP overstock reports (files with `wip_overstock_` prefix)
+- Python report generation scripts:
+  - `cycle_count_due_report.py` - Script for generating cycle count due reports
+  - `epic_status_report.py` - Script for generating epic status reports
+  - `group_issues_report.py` - Script for generating group issues reports
+  - `inventory_check_report.py` - Script for generating inventory check reports
+  - `item_type_error_report.py` - Script for generating item type error reports
+  - `missing_cost_report.py` - Script for generating missing cost reports
+  - `missing_routing_report.py` - Script for generating missing routing reports
+  - `new_items_report.py` - Script for generating new items reports
+  - `operation_check_report.py` - Script for generating operation check reports
+  - `prod_line_issues_report.py` - Script for generating production line issues reports
+  - `slow_moving_report.py` - Script for generating slow moving inventory reports
+  - `wip_overstock_report.py` - Script for generating WIP overstock reports
+
+## SQL-Agent Directory
+- `.env` - Environment variables file
+- `.git/` - Git repository directory
+- `.gitignore` - Git ignore file
+- `app.py` - Main application script
+- `db_connector.py` - Database connector script
+- `output_formatter.py` - Output formatter script
+- `query_engine.py` - Query engine script
+- `requirements.txt` - List of Python dependencies
+- `sample_queries.json` - Sample queries in JSON format
+- `schema_extractor.py` - Schema extractor script
+- `venv/` - Python virtual environment directory
