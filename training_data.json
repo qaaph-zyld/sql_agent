@@ -1,0 +1,47 @@
+{
+  "ddl_statements": [],
+  "example_queries": [
+    {
+      "sql": "-- Get inventory and recent transactions for a specific part\nSELECT \n    i.in_part,\n    i.in_site,\n    i.in_qty_oh AS 'On Hand Qty',\n    i.in_qty_avail AS 'Available Qty',\n    t.tr_date AS 'Transaction Date',\n    t.tr_type AS 'Transaction Type',\n    t.tr_qty_loc AS 'Transaction Qty'\nFROM \n    [QADEE2798].[dbo].[15] i\nLEFT JOIN \n    [QADEE2798].[dbo].[tr_hist] t ON i.in_part = t.tr_part AND i.in_site = t.tr_site\nWHERE \n    i.in_part = 'PART_NUMBER'\nORDER BY \n    t.tr_date DESC",
+      "description": "Example query from documentation"
+    },
+    {
+      "sql": "-- Get sales orders with details and customer information\nSELECT \n    so.so_nbr AS 'Order Number',\n    so.so_cust AS 'Customer',\n    ad.ad_name AS 'Customer Name',\n    so.so_ord_date AS 'Order Date',\n    sod.sod_part AS 'Part Number',\n    sod.sod_qty_ord AS 'Ordered Qty',\n    sod.sod_price AS 'Price'\nFROM \n    [QADEE2798].[dbo].[so_mstr] so\nJOIN \n    [QADEE2798].[dbo].[sod_det] sod ON so.so_nbr = sod.sod_nbr\nLEFT JOIN \n    [QADEE2798].[dbo].[ad_mstr] ad ON so.so_cust = ad.ad_addr\nORDER BY \n    so.so_ord_date DESC",
+      "description": "Example query from documentation"
+    },
+    {
+      "sql": "-- Get purchase orders with vendor information\nSELECT \n    po.po_nbr AS 'PO Number',\n    po.po_vend AS 'Vendor Code',\n    vd.vd_name AS 'Vendor Name',\n    po.po_ord_date AS 'Order Date',\n    pod.pod_part AS 'Part Number',\n    pod.pod_qty_ord AS 'Ordered Qty'\nFROM \n    [QADEE2798].[dbo].[po_mstr] po\nJOIN \n    [QADEE2798].[dbo].[pod_det] pod ON po.po_nbr = pod.pod_nbr\nLEFT JOIN \n    [QADEE2798].[dbo].[vd_mstr] vd ON po.po_vend = vd.vd_addr\nORDER BY \n    po.po_ord_date DESC",
+      "description": "Example query from documentation"
+    },
+    {
+      "sql": "-- Get active production schedules\nSELECT \n    s.schd_nbr AS 'Schedule Number',\n    s.schd_line AS 'Line',\n    s.schd_date AS 'Schedule Date',\n    s.schd_discr_qty AS 'Discrete Qty',\n    s.schd_cum_qty AS 'Cumulative Qty',\n    i.in_qty_oh AS 'On Hand Qty',\n    i.in_qty_avail AS 'Available Qty'\nFROM \n    [QADEE2798].[dbo].[active_schd_det] s\nLEFT JOIN \n    [QADEE2798].[dbo].[15] i ON s.schd_part = i.in_part\nWHERE \n    s.schd_date >= GETDATE()\nORDER BY \n    s.schd_date",
+      "description": "Example query from documentation"
+    }
+  ],
+  "business_documentation": [],
+  "column_definitions": {
+    "New": "- if today()-pt_added < 30, the value being New, else null and then you merge the two queries",
+    "pt_added": "column and column",
+    "Total Inv": "<> 0, then \"Yes\", else \"No\"; if",
+    "FG/SFG/RM": "then \"Yes\" else null",
+    "Prod Line": "= \"0000\" and",
+    "Group": "in (\"Thread\",\"Rolls\"] then",
+    "Item Number Status": "= \"EPIC\" and",
+    "Operation check": "- if count of",
+    "Item both Plants": "is null, then \"Yes\" else null",
+    "Cycle Count Due": "- if pt_cyc_int - Last_CC <5 then \"Yes\" else null",
+    "Slow-moving Warning": "- if 90<Last_ISSUE<180 then \"Yes\" else null",
+    "Item Type Error": "- if Item Type <>",
+    "WIP_maximum": ", calculate",
+    "WIP_minimum": "; otherwise null.",
+    "WIP_overstock_Value": "- calculated as"
+  },
+  "table_relationships": [],
+  "metadata": {
+    "source": "QADEE2798 database documentation",
+    "extracted_at": "2024-01-01",
+    "tables_count": 0,
+    "examples_count": 4,
+    "business_docs_count": 0
+  }
+}
